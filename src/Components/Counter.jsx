@@ -1,24 +1,24 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 
 const Counter = () => {
 
-    const [count, setCount] = useState(0)
+  const [ count, setCount ] = useState(0)
 
-    function increment() {
-        setCount(count + 1)
-    }
+  function increment() {
+    setCount(count + 1)
+  }
 
-    function decrement() {
-        setCount(count - 1)
-    }
+  function decrement() {
+    setCount(count - 1)
+  }
 
-    return (
-      <div>
-          <h1>{count}</h1>
-          <button onClick={increment}>Увеличиить</button>
-          <button onClick={decrement}>Уменьшить</button>
-      </div>
-    );
+  return (
+    <div>
+      <h1>{ count }</h1>
+      <button onClick={ increment }>Увеличиить</button>
+      <button onClick={ decrement }>Уменьшить</button>
+    </div>
+  );
 };
 
 export default Counter;
