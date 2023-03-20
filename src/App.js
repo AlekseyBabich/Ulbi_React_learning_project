@@ -1,28 +1,21 @@
 import React, {useState} from "react";
+import './styles/App.css'
+import PostItem from "./Components/PostItem";
 
 function App() {
+    const [posts, setPosts] = useState([
+        {id: 1, title: 'Javascript 1', body: 'Description'},
+        {id: 2, title: 'Javascript 2', body: 'Description'},
+        {id: 3, title: 'Javascript 3', body: 'Description'}
+    ])
 
-    const [likes, setLikes] = useState(5)
-    const [value, setValue] = useState('')
-
-    function increment() {
-        setLikes(likes + 1)
-    }
-
-    function decrement() {
-        setLikes(likes - 1)
-    }
-
-
-  return (
-    <div className="App">
-        <h1>{likes}</h1>
-        <h1>{value}</h1>
-        <input onChange={event => setValue(event.target.value)}/>
-        <button onClick={increment}>Увеличиить</button>
-        <button onClick={decrement}>Уменьшить</button>
-    </div>
-  );
+    return (
+      <div className="App">
+          {posts.map(post =>
+              <PostItem post={post} key={post.id}/>
+          )}
+      </div>
+    );
 }
 
 export default App;
