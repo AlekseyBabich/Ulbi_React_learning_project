@@ -9,7 +9,7 @@ const Pagination = ({ totalPages, page, changePage }) => {
     <div className='page__wrapper'>
       { pagesArray.map(p =>
         <span
-          onClick={ () => changePost(p) }
+          onClick={ () => changePage(p) }
           key={ p }
           className={ page === p ? 'page page__current' : 'page' }>
             { p }
